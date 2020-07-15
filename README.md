@@ -8,7 +8,7 @@ and a talk **MVVM-android** [Meetup Androidinights](http://www.meetup.com/es/And
 
 Libraries used on the sample project
 ------------------------------------
-* [AppCompat, CardView, RecyclerView an DesignLibrary](http://developer.android.com/intl/es/tools/support-library/index.html)
+* [AppCompat, CardView, RecyclerView an Material](http://developer.android.com/intl/es/tools/support-library/index.html)
 * [Data binding](https://erikjhordan-rey.github.io/blog/2015/12/15/ANDROID-databinding-android.html)
 * [Retrofit 2](http://square.github.io/retrofit/)
 * [RxJava & RxAndroid](https://github.com/ReactiveX/RxAndroid)
