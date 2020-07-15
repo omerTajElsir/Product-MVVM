@@ -6,7 +6,7 @@
 
         <variable
             name="peopleDetailViewModel"
-            type="com.example.jhordan.people_mvvm.viewmodel.PeopleDetailViewModel" />
+            type="io.github.erikjhordanrey.people_mvvm.viewmodel.PeopleDetailViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
