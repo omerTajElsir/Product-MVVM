@@ -14,33 +14,33 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.viewmodel;
+package io.github.erikjhordanrey.product_mvvm.viewmodel;
 
 import android.view.View;
-import io.github.erikjhordanrey.people_mvvm.model.People;
+import io.github.erikjhordanrey.product_mvvm.model.Product;
 
-public class PeopleDetailViewModel {
+public class ProductDetailViewModel {
 
-    private final People people;
+    private final Product product;
 
-    public PeopleDetailViewModel(People people) {
-        this.people = people;
+    public ProductDetailViewModel(Product product) {
+        this.product = product;
     }
 
     public String getFullUserName() {
-        return people.getName();
+        return product.getName();
     }
 
     public String getPic() {
-        return people.getPic();
+        return product.getPic();
     }
 
     public String getDesc() {
-        return people.getDesc();
+        return product.getDesc();
     }
 
     public String getPrice() {
-        return people.getPrice();
+        return product.getPrice();
     }
 
 

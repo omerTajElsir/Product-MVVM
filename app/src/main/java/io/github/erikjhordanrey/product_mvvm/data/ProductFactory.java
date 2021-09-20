@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.data;
+package io.github.erikjhordanrey.product_mvvm.data;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PeopleFactory {
+public class ProductFactory {
 
 
   private final static String BASE_URL = "http://demo3426602.mockable.io/";
   public final static String RANDOM_USER_URL = "http://demo3426602.mockable.io/porducts";
 
-  public static PeopleService create() {
+  public static ProductService create() {
     Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build();
-    return retrofit.create(PeopleService.class);
+    return retrofit.create(ProductService.class);
   }
 }
 

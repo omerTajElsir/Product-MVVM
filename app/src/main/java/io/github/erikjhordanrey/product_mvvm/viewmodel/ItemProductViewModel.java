@@ -14,52 +14,52 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.viewmodel;
+package io.github.erikjhordanrey.product_mvvm.viewmodel;
 
 import android.content.Context;
 import android.view.View;
 import androidx.databinding.BaseObservable;
-import io.github.erikjhordanrey.people_mvvm.model.People;
-import io.github.erikjhordanrey.people_mvvm.view.PeopleDetailActivity;
+import io.github.erikjhordanrey.product_mvvm.model.Product;
+import io.github.erikjhordanrey.product_mvvm.view.ProductDetailActivity;
 
-public class ItemPeopleViewModel extends BaseObservable {
+public class ItemProductViewModel extends BaseObservable {
 
     private final Context context;
-    private People people;
+    private Product product;
 
-    public ItemPeopleViewModel(Context context, People people) {
+    public ItemProductViewModel(Context context, Product product) {
         this.context = context;
-        this.people = people;
+        this.product = product;
     }
 
     public String getFullName() {
-        return people.getName();
+        return product.getName();
     }
 
     public String getPic() {
-        return people.getPic();
+        return product.getPic();
     }
 
     public String getDesc() {
-        return people.getDesc();
+        return product.getDesc();
     }
 
     public String getPrice() {
-        return people.getPrice();
+        return product.getPrice();
     }
 
     public void onItemClick(View view) {
-        context.startActivity(PeopleDetailActivity.launchDetail(view.getContext(), people));
+        context.startActivity(ProductDetailActivity.launchDetail(view.getContext(), product));
     }
 
     public void onDel(View view) {
-        context.startActivity(PeopleDetailActivity.launchDetail(view.getContext(), people));
+        context.startActivity(ProductDetailActivity.launchDetail(view.getContext(), product));
     }
 
 
 
-    public void setPeople(People people) {
-        this.people = people;
+    public void setProduct(Product product) {
+        this.product = product;
         notifyChange();
     }
 }

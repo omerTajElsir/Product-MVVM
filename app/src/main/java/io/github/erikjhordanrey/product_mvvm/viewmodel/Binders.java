@@ -1,4 +1,4 @@
-package io.github.erikjhordanrey.people_mvvm.viewmodel;
+package io.github.erikjhordanrey.product_mvvm.viewmodel;
 
 import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;

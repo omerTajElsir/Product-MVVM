@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.erikjhordanrey.people_mvvm">
+    package="io.github.erikjhordanrey.product_mvvm">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".PeopleApplication"
+        android:name=".ProductApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +17,7 @@
         tools:ignore="UnusedAttribute">
 
         <activity
-            android:name=".view.PeopleActivity"
+            android:name=".view.ProductActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
@@ -30,8 +30,8 @@
         </activity>
 
         <activity
-            android:name=".view.PeopleDetailActivity"
-            android:parentActivityName=".view.PeopleActivity"
+            android:name=".view.ProductDetailActivity"
+            android:parentActivityName=".view.ProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

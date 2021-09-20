@@ -1,4 +1,4 @@
-package io.github.erikjhordanrey.people_mvvm;
+package io.github.erikjhordanrey.product_mvvm;
 
 import android.content.Context;
 import android.view.View;

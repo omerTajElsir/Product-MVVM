@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm;
+package io.github.erikjhordanrey.product_mvvm;
 
 import android.content.Context;
 import androidx.multidex.MultiDexApplication;
 
-import io.github.erikjhordanrey.people_mvvm.data.PeopleFactory;
-import io.github.erikjhordanrey.people_mvvm.data.PeopleService;
+import io.github.erikjhordanrey.product_mvvm.data.ProductFactory;
+import io.github.erikjhordanrey.product_mvvm.data.ProductService;
 
 import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
 
-public class PeopleApplication extends MultiDexApplication {
+public class ProductApplication extends MultiDexApplication {
 
-  private PeopleService peopleService;
+  private ProductService productService;
   private Scheduler scheduler;
 
-  private static PeopleApplication get(Context context) {
-    return (PeopleApplication) context.getApplicationContext();
+  private static ProductApplication get(Context context) {
+    return (ProductApplication) context.getApplicationContext();
   }
 
-  public static PeopleApplication create(Context context) {
-    return PeopleApplication.get(context);
+  public static ProductApplication create(Context context) {
+    return ProductApplication.get(context);
   }
 
-  public PeopleService getPeopleService() {
-    if (peopleService == null) {
-      peopleService = PeopleFactory.create();
+  public ProductService getProductService() {
+    if (productService == null) {
+      productService = ProductFactory.create();
     }
 
-    return peopleService;
+    return productService;
   }
 
   public Scheduler subscribeScheduler() {

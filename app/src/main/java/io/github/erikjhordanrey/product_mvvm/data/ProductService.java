@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.data;
+package io.github.erikjhordanrey.product_mvvm.data;
 
 import retrofit2.http.GET;
 import retrofit2.http.Url;
 import io.reactivex.Observable;
 
-public interface PeopleService {
+public interface ProductService {
 
-  @GET Observable<PeopleResponse> fetchPeople(@Url String url);
+  @GET Observable<ProductResponse> fetchProduct(@Url String url);
 }

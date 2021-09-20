@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.view;
+package io.github.erikjhordanrey.product_mvvm.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,28 +22,28 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import io.github.erikjhordanrey.people_mvvm.R;
-import io.github.erikjhordanrey.people_mvvm.databinding.PeopleDetailActivityBinding;
-import io.github.erikjhordanrey.people_mvvm.model.People;
-import io.github.erikjhordanrey.people_mvvm.viewmodel.PeopleDetailViewModel;
+import io.github.erikjhordanrey.product_mvvm.R;
+import io.github.erikjhordanrey.product_mvvm.databinding.ProductDetailActivityBinding;
+import io.github.erikjhordanrey.product_mvvm.model.Product;
+import io.github.erikjhordanrey.product_mvvm.viewmodel.ProductDetailViewModel;
 
-public class PeopleDetailActivity extends AppCompatActivity {
+public class ProductDetailActivity extends AppCompatActivity {
 
   private static final String EXTRA_PEOPLE = "EXTRA_PEOPLE";
 
-  private PeopleDetailActivityBinding binding;
+  private ProductDetailActivityBinding binding;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    binding = DataBindingUtil.setContentView(this, R.layout.people_detail_activity);
+    binding = DataBindingUtil.setContentView(this, R.layout.product_detail_activity);
     setSupportActionBar(binding.toolbar);
     displayHomeAsUpEnabled();
     getExtrasFromIntent();
   }
 
-  public static Intent launchDetail(Context context, People people) {
-    Intent intent = new Intent(context, PeopleDetailActivity.class);
-    intent.putExtra(EXTRA_PEOPLE, people);
+  public static Intent launchDetail(Context context, Product product) {
+    Intent intent = new Intent(context, ProductDetailActivity.class);
+    intent.putExtra(EXTRA_PEOPLE, product);
     return intent;
   }
 
@@ -55,9 +55,9 @@ public class PeopleDetailActivity extends AppCompatActivity {
   }
 
   private void getExtrasFromIntent() {
-    People people = (People) getIntent().getSerializableExtra(EXTRA_PEOPLE);
-    PeopleDetailViewModel peopleDetailViewModel = new PeopleDetailViewModel(people);
-    binding.setPeopleDetailViewModel(peopleDetailViewModel);
-    setTitle(people.getName());
+    Product product = (Product) getIntent().getSerializableExtra(EXTRA_PEOPLE);
+    ProductDetailViewModel productDetailViewModel = new ProductDetailViewModel(product);
+    binding.setProductDetailViewModel(productDetailViewModel);
+    setTitle(product.getName());
   }
 }

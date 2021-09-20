@@ -1,4 +1,4 @@
-# People-MVVM [![Build Status](https://travis-ci.org/erikjhordan-rey/People-MVVM.svg?branch=master)](https://travis-ci.org/erikjhordan-rey/People-MVVM)
+# Product-MVVM [![Build Status](https://travis-ci.org/erikjhordan-rey/Product-MVVM.svg?branch=master)](https://travis-ci.org/erikjhordan-rey/Product-MVVM)
 
 The sample was created to support an article explanation [Escribiendo android apps con Data Binding](https://erikjhordan-rey.github.io/blog/2015/12/15/ANDROID-databinding-android.html) (Spanish)
 and a talk **MVVM-android** [Meetup Androidinights](http://www.meetup.com/es/Androidinights/) at GDG Androidtitlan Mexico City March 2016. 

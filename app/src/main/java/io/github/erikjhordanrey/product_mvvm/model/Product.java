@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.model;
+package io.github.erikjhordanrey.product_mvvm.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class People implements Serializable {
+public class Product implements Serializable {
 
 
     @SerializedName("name")

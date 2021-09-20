@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.data;
+package io.github.erikjhordanrey.product_mvvm.data;
 
-import io.github.erikjhordanrey.people_mvvm.model.People;
+import io.github.erikjhordanrey.product_mvvm.model.Product;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class PeopleResponse {
+public class ProductResponse {
 
     @SerializedName("results")
-    private List<People> peopleList;
+    private List<Product> productList;
 
-    public List<People> getPeopleList() {
-        return peopleList;
+    public List<Product> getProductList() {
+        return productList;
     }
 }

@@ -8,7 +8,7 @@
 
     <variable
         name="mainViewModel"
-        type="io.github.erikjhordanrey.people_mvvm.viewmodel.PeopleViewModel"/>
+        type="io.github.erikjhordanrey.product_mvvm.viewmodel.ProductViewModel"/>
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -22,11 +22,6 @@
         android:orientation="vertical"
 
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-
-
-
-
 
 
     <RelativeLayout
@@ -67,10 +62,10 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:gravity="center"
-          app:visibility="@{mainViewModel.peopleProgress}">
+          app:visibility="@{mainViewModel.productProgress}">
 
         <ProgressBar
-            android:id="@+id/progress_people"
+            android:id="@+id/progress_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -86,20 +81,20 @@
           android:layout_height="wrap_content"
           android:gravity="center"
           android:text="@{mainViewModel.messageLabel}"
-          app:visibility="@{mainViewModel.peopleLabel}"/>
+          app:visibility="@{mainViewModel.productLabel}"/>
 
 
 
       <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recycler_people"
+          android:id="@+id/recycler_product"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:clipToPadding="false"
           android:scrollbars="vertical"
           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
           app:layout_behavior="@string/appbar_scrolling_view_behavior"
-          app:visibility="@{mainViewModel.peopleRecycler}"
-          tools:listitem="@layout/item_people"/>
+          app:visibility="@{mainViewModel.productRecycler}"
+          tools:listitem="@layout/product_activity"/>
 
 
     </LinearLayout>

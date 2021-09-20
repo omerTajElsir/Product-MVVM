@@ -14,49 +14,48 @@
  * limitations under the License.
  */
 
-package io.github.erikjhordanrey.people_mvvm.view;
+package io.github.erikjhordanrey.product_mvvm.view;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-import io.github.erikjhordanrey.people_mvvm.R;
-import io.github.erikjhordanrey.people_mvvm.data.PeopleFactory;
-import io.github.erikjhordanrey.people_mvvm.databinding.PeopleActivityBinding;
-import io.github.erikjhordanrey.people_mvvm.viewmodel.PeopleViewModel;
+import io.github.erikjhordanrey.product_mvvm.R;
+import io.github.erikjhordanrey.product_mvvm.databinding.ProductActivityBinding;
+import io.github.erikjhordanrey.product_mvvm.viewmodel.ProductViewModel;
 import java.util.Observable;
 import java.util.Observer;
 
-public class PeopleActivity extends AppCompatActivity implements Observer {
+public class ProductActivity extends AppCompatActivity implements Observer {
 
-    private PeopleViewModel peopleViewModel;
+    private ProductViewModel productViewModel;
 
-    private PeopleActivityBinding binding;
+    private ProductActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDataBinding();
-        setupListPeopleView(binding.recyclerPeople);
-        setupObserver(peopleViewModel);
+        setupListProductView(binding.recyclerProduct);
+        setupObserver(productViewModel);
+        productViewModel.initializeViews();
+        productViewModel.fetchProductList();
     }
 
 
 
     private void initDataBinding() {
-        binding = DataBindingUtil.setContentView(this, R.layout.people_activity);
-        peopleViewModel = new PeopleViewModel(this);
-        binding.setMainViewModel(peopleViewModel);
+        binding = DataBindingUtil.setContentView(this, R.layout.product_activity);
+        productViewModel = new ProductViewModel(this);
+        binding.setMainViewModel(productViewModel);
     }
 
-    private void setupListPeopleView(RecyclerView recyclerPeople) {
-        PeopleAdapter adapter = new PeopleAdapter();
-        recyclerPeople.setAdapter(adapter);
-        recyclerPeople.setHasFixedSize(true);
+    private void setupListProductView(RecyclerView recyclerProduct) {
+        ProductAdapter adapter = new ProductAdapter();
+        recyclerProduct.setAdapter(adapter);
+        recyclerProduct.setHasFixedSize(true);
     }
 
     public void setupObserver(Observable observable) {
@@ -66,7 +65,7 @@ public class PeopleActivity extends AppCompatActivity implements Observer {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        peopleViewModel.reset();
+        productViewModel.reset();
     }
 
     @Override
@@ -78,11 +77,11 @@ public class PeopleActivity extends AppCompatActivity implements Observer {
 
     @Override
     public void update(Observable observable, Object data) {
-        if (observable instanceof PeopleViewModel) {
-            PeopleAdapter peopleAdapter = (PeopleAdapter) binding.recyclerPeople.getAdapter();
-            PeopleViewModel peopleViewModel = (PeopleViewModel) observable;
-            if (peopleAdapter != null) {
-                peopleAdapter.setPeopleList(peopleViewModel.getPeopleList());
+        if (observable instanceof ProductViewModel) {
+            ProductAdapter productAdapter = (ProductAdapter) binding.recyclerProduct.getAdapter();
+            ProductViewModel productViewModel = (ProductViewModel) observable;
+            if (productAdapter != null) {
+                productAdapter.setProductList(productViewModel.getProductList());
             }
         }
     }

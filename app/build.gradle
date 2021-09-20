@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "io.github.erikjhordanrey.people_mvvm"
+        applicationId "io.github.erikjhordanrey.product_mvvm"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
