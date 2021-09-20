@@ -28,39 +28,20 @@ public class PeopleDetailViewModel {
     }
 
     public String getFullUserName() {
-        return people.getFullName();
+        return people.getName();
     }
 
-    public String getUserName() {
-        return people.getLogin().getUserName();
+    public String getPic() {
+        return people.getPic();
     }
 
-    public String getEmail() {
-        return people.getMail();
+    public String getDesc() {
+        return people.getDesc();
     }
 
-    public int getEmailVisibility() {
-        return people.hasEmail() ? View.VISIBLE : View.GONE;
+    public String getPrice() {
+        return people.getPrice();
     }
 
-    public String getCell() {
-        return people.getCell();
-    }
 
-    public String getPictureProfile() {
-        return people.getPicture().getLarge();
-    }
-
-    public String getAddress() {
-        return people.getLocation().getStreet().getName()
-                + " "
-                + people.getLocation().getStreet().getNumber() + " "
-                + people.getLocation().getCity()
-                + " "
-                + people.getLocation().getState();
-    }
-
-    public String getGender() {
-        return people.getGender();
-    }
 }

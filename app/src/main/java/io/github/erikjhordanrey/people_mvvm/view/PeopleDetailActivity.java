@@ -58,6 +58,6 @@ public class PeopleDetailActivity extends AppCompatActivity {
     People people = (People) getIntent().getSerializableExtra(EXTRA_PEOPLE);
     PeopleDetailViewModel peopleDetailViewModel = new PeopleDetailViewModel(people);
     binding.setPeopleDetailViewModel(peopleDetailViewModel);
-    setTitle(people.getName().getTitle() + "." + people.getName().getFirst() + " " + people.getName().getLast());
+    setTitle(people.getName());
   }
 }

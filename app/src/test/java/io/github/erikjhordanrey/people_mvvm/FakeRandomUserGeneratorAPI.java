@@ -16,13 +16,8 @@
 
 package io.github.erikjhordanrey.people_mvvm;
 
-import io.github.erikjhordanrey.people_mvvm.model.Location;
-import io.github.erikjhordanrey.people_mvvm.model.Login;
-import io.github.erikjhordanrey.people_mvvm.model.Name;
 import io.github.erikjhordanrey.people_mvvm.model.People;
-import io.github.erikjhordanrey.people_mvvm.model.Picture;
 
-import io.github.erikjhordanrey.people_mvvm.model.Street;
 import java.util.ArrayList;
 import java.util.List;
 

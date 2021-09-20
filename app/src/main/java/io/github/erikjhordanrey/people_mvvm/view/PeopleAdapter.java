@@ -20,6 +20,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import io.github.erikjhordanrey.people_mvvm.R;
 import io.github.erikjhordanrey.people_mvvm.databinding.ItemPeopleBinding;
@@ -29,7 +30,7 @@ import io.github.erikjhordanrey.people_mvvm.viewmodel.ItemPeopleViewModel;
 import java.util.Collections;
 import java.util.List;
 
-public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleAdapterViewHolder> {
+public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleAdapterViewHolder> implements View.OnClickListener {
 
     private List<People> peopleList;
 
@@ -48,6 +49,14 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleAdap
     @Override
     public void onBindViewHolder(PeopleAdapterViewHolder holder, int position) {
         holder.bindPeople(peopleList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.equals(R.id.delete)){
+                    peopleList.remove(0);
+                }
+            }
+        });
     }
 
     @Override
@@ -58,6 +67,15 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleAdap
     void setPeopleList(List<People> peopleList) {
         this.peopleList = peopleList;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public void onClick(View v) {
+        //Log.d("View: ", v.toString());
+        //Toast.makeText(v.getContext(), mTextViewTitle.getText() + " position = " + getPosition(), Toast.LENGTH_SHORT).show();
+        if(v.equals(R.id.delete)){
+            peopleList.remove(0);
+        }
     }
 
     static class PeopleAdapterViewHolder extends RecyclerView.ViewHolder {

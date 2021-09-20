@@ -33,24 +33,30 @@ public class ItemPeopleViewModel extends BaseObservable {
     }
 
     public String getFullName() {
-        return people.getName().getTitle() + "." + people.getName().getFirst() + " " + people.getName().getLast();
+        return people.getName();
     }
 
-    public String getCell() {
-        return people.getCell();
+    public String getPic() {
+        return people.getPic();
     }
 
-    public String getMail() {
-        return people.getMail();
+    public String getDesc() {
+        return people.getDesc();
     }
 
-    public String getPictureProfile() {
-        return people.getPicture().getMedium();
+    public String getPrice() {
+        return people.getPrice();
     }
 
     public void onItemClick(View view) {
         context.startActivity(PeopleDetailActivity.launchDetail(view.getContext(), people));
     }
+
+    public void onDel(View view) {
+        context.startActivity(PeopleDetailActivity.launchDetail(view.getContext(), people));
+    }
+
+
 
     public void setPeople(People people) {
         this.people = people;

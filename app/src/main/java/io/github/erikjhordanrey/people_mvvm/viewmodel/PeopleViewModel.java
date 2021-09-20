@@ -47,9 +47,17 @@ public class PeopleViewModel extends Observable {
         peopleRecycler = new ObservableInt(View.GONE);
         peopleLabel = new ObservableInt(View.VISIBLE);
         messageLabel = new ObservableField<>(context.getString(R.string.default_loading_people));
+
+        initializeViews();
+        fetchPeopleList();
     }
 
     public void onClickFabLoad(View view) {
+        addItem(peopleList.get(0));
+
+    }
+
+    public void onClickRefresh(View view) {
         initializeViews();
         fetchPeopleList();
     }
@@ -96,6 +104,18 @@ public class PeopleViewModel extends Observable {
 
     private void changePeopleDataSet(List<People> peoples) {
         peopleList.addAll(peoples);
+        setChanged();
+        notifyObservers();
+    }
+
+    private void addItem(People peoples) {
+        peopleList.add(peoples);
+        setChanged();
+        notifyObservers();
+    }
+
+    public void onDelete(View view) {
+        peopleList.remove(0);
         setChanged();
         notifyObservers();
     }

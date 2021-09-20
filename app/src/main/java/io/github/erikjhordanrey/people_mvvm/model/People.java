@@ -22,86 +22,50 @@ import java.io.Serializable;
 
 public class People implements Serializable {
 
-    @SerializedName("gender")
-    private String gender;
 
     @SerializedName("name")
-    private Name name;
+    private String name;
 
-    @SerializedName("location")
-    private Location location;
+    @SerializedName("price")
+    private String price;
 
-    @SerializedName("email")
-    private String mail;
-
-    @SerializedName("login")
-    private Login login;
-
-    @SerializedName("cell")
-    private String cell;
+    @SerializedName("desc")
+    private String desc;
 
     @SerializedName("picture")
-    private Picture picture;
+    private String picture;
 
-    private String fullName;
 
-    public String getGender() {
-        return gender;
-    }
-
-    public Name getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Name name) {
-        this.name = name;
+    public String getPrice() {
+        return price;
     }
 
-    public Location getLocation() {
-        return location;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
-    public String getCell() {
-        return cell;
-    }
-
-    public void setCell(String cell) {
-        this.cell = cell;
-    }
-
-    public Picture getPicture() {
+    public String getPic() {
         return picture;
     }
 
-    public void setPicture(Picture picture) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public void setPicture(String picture) {
         this.picture = picture;
     }
 
-    public String getFullName() {
-        return name.getTitle() + "." + name.getFirst() + " " + name.getLast();
-    }
-
-    public boolean hasEmail() {
-        return mail != null && !mail.isEmpty();
-    }
 }

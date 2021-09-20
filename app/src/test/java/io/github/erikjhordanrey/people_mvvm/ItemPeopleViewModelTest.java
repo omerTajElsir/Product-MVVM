@@ -20,9 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import androidx.databinding.Observable;
 
-import io.github.erikjhordanrey.people_mvvm.model.Name;
 import io.github.erikjhordanrey.people_mvvm.model.People;
-import io.github.erikjhordanrey.people_mvvm.model.Picture;
 import io.github.erikjhordanrey.people_mvvm.viewmodel.ItemPeopleViewModel;
 
 import org.junit.Ignore;
